@@ -1,0 +1,24 @@
+name: harness-example
+replicas: 1
+
+image: ${artifact.metadata.image}
+dockercfg: ${artifact.source.dockerconfig}
+
+createNamespace: true
+namespace: ${infra.kubernetes.namespace}
+
+command: "["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]"
+
+resources:
+  requests:
+    cpu: 1
+    mem: 256Mi
+  limits:
+    cpu: 1
+    mem: 256Mi
+
+configMap:
+  key1: value1
+
+secret:
+  key2: secret1
