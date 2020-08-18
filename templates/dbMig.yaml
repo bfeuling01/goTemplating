@@ -9,6 +9,6 @@ spec:
       containers:
       - name: pi
         image: python:3.6.12-alpine
-        command: ['echo','hellworld']
+        command: ["echo","hellworld"]
       restartPolicy: Never
   backoffLimit: 4
